@@ -26,13 +26,13 @@
     "@types/koa-bodyparser": "^5.0.1",
     "@types/koa-router": "^7.0.22",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.5.5",
+    "@types/node": "^10.5.7",
     "@types/ramda": "0.25.36",
     "@types/superagent": "^3.8.3",
     "@types/supertest-as-promised": "^2.0.34",
     "@types/uuid": "^3.0.0",
     "@types/winston": "^2.3.2",
-    "chai": "^4.0.1",
+    "chai": "^4.1.2",
     "chai-as-promised": "^7.0.0",
     "concurrently": "^3.6.1",
     "istanbul": "^0.4.5",
@@ -49,7 +49,6 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "checkout-logger": "git+ssh://git@github.com/CheckoutFinland/checkout-logger.git",
     "convict": "^4.0.0",
     "http-errors": "^1.7.0",
     "koa": "^2.2.0",
