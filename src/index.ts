@@ -28,6 +28,9 @@ export const api: (account: string, secret: string) => {
   payment(body: unknown): request.SuperAgentRequest
 } =
   (account, secret) => ({
+    // TODO:
+    // - add types to body
+    // - validate body against json schema
     payment: (body: unknown) =>
       request
         .post(`${PSP_URL}/payments`)
