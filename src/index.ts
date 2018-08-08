@@ -4,13 +4,22 @@ import { payloadWithHmac } from './helpers';
 
 const PSP_URL: string = 'https://api.checkout.fi';
 
-// tslint:disable:no-any
+interface ApiHeaders {
+  readonly 'checkout-account': string;
+  readonly 'checkout-algorithm': string;
+  readonly 'checkout-method': string;
+  readonly 'checkout-nonce': string;
+  readonly 'checkout-timestamp': string;
+  readonly [key: string]: string;
+}
 
-const getHeaders: any =
-  (account: string) => ({
+const getHeaders: (account: string) => ApiHeaders =
+  (account) => ({
     'checkout-account': account,
     'checkout-algorithm': 'sha256',
     'checkout-method': 'POST',
+    // Current types do not support node 10.8 bigint() yet ¯\_(ツ)_/¯
+    // tslint:disable-next-line:no-any
     'checkout-nonce': (process.hrtime as any).bigint().toString(),
     'checkout-timestamp': new Date().toISOString()
   });
